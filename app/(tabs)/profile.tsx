@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import CalendarStrip from "react-native-calendar-strip";
 
-const profile = () => {
+const Profile = () => {
   return (
-    <View>
-      <Text>profile</Text>
+    <View className="flex-1 pt-14 bg-background">
+      <Text>Profile</Text>
     </View>
-  )
-}
+  );
+};
 
-export default profile
+export default Profile;

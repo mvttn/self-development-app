@@ -1,7 +1,18 @@
 import { View, Text, ImageBackground } from "react-native";
 import React, { ReactElement } from "react";
 import { Tabs } from "expo-router";
-import { Pencil, FileChartColumnIncreasing, House, ListTodo, Users } from "lucide-react-native";
+import {
+  Pencil,
+  FileChartColumnIncreasing,
+  House,
+  ListTodo,
+  Users,
+  CalendarCheck,
+  User,
+  NotebookPen,
+  Handshake,
+} from "lucide-react-native";
+import { Screen } from "react-native-screens";
 
 interface TabIconProps {
   focused: boolean;
@@ -17,7 +28,7 @@ const TabIcon = ({ focused, icon, title }: TabIconProps) => {
     >
       <View className="flex flex-col justify-center items-center">
         {React.cloneElement(icon, {
-          color: focused ? "#8c58df" : "#020d0a",
+          color: focused ? "#ff4f29" : "#19021b",
           size: 24,
         })}
         <Text
@@ -25,7 +36,7 @@ const TabIcon = ({ focused, icon, title }: TabIconProps) => {
             focused ? "text-accent" : "text-text"
           }`}
         >
-          {title}
+          {focused ? title : ""}
         </Text>
       </View>
     </ImageBackground>
@@ -64,32 +75,12 @@ const _Layout = () => {
         }}
       />
       <Tabs.Screen
-        name="tasks"
+        name="today"
         options={{
-          title: "Tasks",
+          title: "Today",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={<ListTodo />} title={"Tasks"} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="reflect"
-        options={{
-          title: "Reflect",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={<Pencil />} title={"Reflect"} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="connect"
-        options={{
-          title: "Connect",
-          headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={<Users />} title={"Connect"} />
+            <TabIcon focused={focused} icon={<CalendarCheck />} title={"Today"} />
           ),
         }}
       />
@@ -98,9 +89,7 @@ const _Layout = () => {
         options={{
           title: "You",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={<FileChartColumnIncreasing />} title={"You"} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon focused={focused} icon={<User />} title={"You"} />,
         }}
       />
     </Tabs>

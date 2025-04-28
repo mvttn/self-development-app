@@ -1,6 +1,12 @@
-import { Text, View } from "react-native";
+import { View, Image } from "react-native";
 import { useFonts } from "expo-font";
 import "../global.css";
+import React from "react";
+import CreatePostBar from "@/components/CreatePostBar";
+import { router } from "expo-router";
+import GradientText from "@/components/GradientText";
+import { Heart, MessageCircle } from "lucide-react-native";
+import { icons } from "@/constants/icons";
 
 export default function Index() {
   const [fontsLoaded] = useFonts({
@@ -13,19 +19,26 @@ export default function Index() {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text className="text-primary text-xl font-bold font-Quicksand">
-        Hi this font is Quicksand
-      </Text>
-      <Text className="text-secondary text-l font-semibold font-Monserrat">
-        And this font is Montserrat
-      </Text>
+    <View className="flex-1 pt-14 bg-background">
+      <View className="flex-row justify-between items-center pr-6">
+        <View className="flex-row justify-center items-center">
+          <Image source={icons.momentaLogo} className="w-14 h-14"></Image>
+          <GradientText
+            text="Momenta"
+            colors={["#f77d74", "#ff4f29", "#d91bf2"]}
+            style={{
+              fontSize: 32,
+              fontWeight: "bold",
+              fontFamily: "Montserrat",
+            }}
+          />
+        </View>
+        <View className="flex-row gap-4">
+          <Heart color="#64748b" size={26} />
+          <MessageCircle color="#64748b" size={26} />
+        </View>
+      </View>
+      <CreatePostBar onPress={() => router.push("/createPost")} text="Write about your day..." />
     </View>
   );
 }

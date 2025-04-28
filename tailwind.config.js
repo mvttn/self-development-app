@@ -5,12 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#31d8a3",
-        secondary: "#8b90e9",
-        text: "#020d0a",
-        light: { 100: "#000000", 200: "#000001" },
-        dark: { 100: "#ffffff", 200: "#fffff1" },
-        accent: "#8c58df",
+        primary: "#d91bf2",
+        secondary: "#f77d74",
+        background: "#fef9ff",
+        text: "#19021b",
+        accent: "#ff4f29",
       },
       fontFamily: {
         Montserrat: "Montserrat",
