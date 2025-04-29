@@ -1,17 +1,7 @@
 import { View, Text, ImageBackground } from "react-native";
 import React, { ReactElement } from "react";
 import { Tabs } from "expo-router";
-import {
-  Pencil,
-  FileChartColumnIncreasing,
-  House,
-  ListTodo,
-  Users,
-  CalendarCheck,
-  User,
-  NotebookPen,
-  Handshake,
-} from "lucide-react-native";
+import { House, User, Goal, FlameKindling } from "lucide-react-native";
 import { Screen } from "react-native-screens";
 
 interface TabIconProps {
@@ -75,12 +65,12 @@ const _Layout = () => {
         }}
       />
       <Tabs.Screen
-        name="today"
+        name="goals"
         options={{
-          title: "Today",
+          title: "Goals",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={<CalendarCheck />} title={"Today"} />
+            <TabIcon focused={focused} icon={<Goal />} title={"Goals"} />
           ),
         }}
       />

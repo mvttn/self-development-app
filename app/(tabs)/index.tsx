@@ -5,7 +5,7 @@ import React from "react";
 import CreatePostBar from "@/components/CreatePostBar";
 import { router } from "expo-router";
 import GradientText from "@/components/GradientText";
-import { Heart, MessageCircle } from "lucide-react-native";
+import { Bell } from "lucide-react-native";
 import { icons } from "@/constants/icons";
 
 export default function Index() {
@@ -33,12 +33,9 @@ export default function Index() {
             }}
           />
         </View>
-        <View className="flex-row gap-4">
-          <Heart color="#64748b" size={26} />
-          <MessageCircle color="#64748b" size={26} />
-        </View>
+        <Bell color="#64748b" size={26} />
       </View>
-      <CreatePostBar onPress={() => router.push("/createPost")} text="Write about your day..." />
+      <CreatePostBar onPress={() => router.push("/createPost")} text="Reflect..." />
     </View>
   );
 }

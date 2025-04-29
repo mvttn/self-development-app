@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import CalendarStrip from "react-native-calendar-strip";
 
-const Today = () => {
+const Goals = () => {
   return (
     <View className="flex-1 pt-14 bg-background">
       <CalendarStrip
@@ -40,4 +40,4 @@ const Today = () => {
   );
 };
 
-export default Today;
+export default Goals;
