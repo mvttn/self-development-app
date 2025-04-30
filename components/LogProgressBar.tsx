@@ -7,19 +7,20 @@ interface CreatePostBarProps {
   text?: string;
 }
 
-const CreatePostBar = ({ onPress, text }: CreatePostBarProps) => {
+const LogProgressBar = ({ onPress, text }: CreatePostBarProps) => {
   return (
-    <View
-      className="flex-row justify-start bg-background items-center rounded-full px-5 py-3 my-3 mx-4 
-      shadow-sm shadow-slate-300"
+    <TouchableOpacity
+      onPress={onPress}
+      className="flex-row justify-start bg-background items-center rounded-full px-5 py-3 mx-4 my-5
+    shadow-sm shadow-slate-300"
       style={{ elevation: 2 }}
     >
-      <TouchableOpacity onPress={onPress} className="flex flex-row">
+      <View className="flex-row">
         <PencilLine color="#64748b" size={26} strokeWidth={1.4} />
         <Text className="text-lg text-slate-500 ml-3 font-Quicksand font-medium">{text}</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
-export default CreatePostBar;
+export default LogProgressBar;

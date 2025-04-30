@@ -1,8 +1,8 @@
 import { View, Image } from "react-native";
 import { useFonts } from "expo-font";
-import "../global.css";
+import "@/app/global.css";
 import React from "react";
-import CreatePostBar from "@/components/CreatePostBar";
+import NewReflectionBar from "@/components/LogProgressBar";
 import { router } from "expo-router";
 import GradientText from "@/components/GradientText";
 import { Bell } from "lucide-react-native";
@@ -35,7 +35,7 @@ export default function Index() {
         </View>
         <Bell color="#64748b" size={26} />
       </View>
-      <CreatePostBar onPress={() => router.push("/createPost")} text="Reflect..." />
+      <NewReflectionBar onPress={() => {}} text="Log your progress..." />
     </View>
   );
 }
